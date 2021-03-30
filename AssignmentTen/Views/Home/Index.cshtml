@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BowlerListViewModel
+<div class="text-center table table-light">
+
+
+    <h1 class="display-4" id="current_cat">@Model.TeamName</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                   Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+                <th>
+                    Phone Number
+                </th>
+            
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Bowler b in Model.BowlerList)
+            {
+            <tr>
+                <td>
+                    @b.BowlerFirstName @b.BowlerMiddleInit @b.BowlerLastName
+                </td>
+                <td>
+                    @b.BowlerAddress
+                </td>
+                <td>
+                    @b.BowlerCity
+                </td>
+                <td>
+                    @b.BowlerState
+                </td>
+                <td>
+                    @b.BowlerZip
+                </td>
+                <td>
+                    @b.BowlerPhoneNumber
+                </td>
+            </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+
+<div class="navvy" pagination-info ="@Model.PagingInfo" url-helper-teamname ="@Model.TeamName"></div>
+
+<script src ="~/js/chill.js"></script>
