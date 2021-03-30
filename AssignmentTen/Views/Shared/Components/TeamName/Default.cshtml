@@ -5,18 +5,19 @@
 }
 @model IEnumerable<Team>
 
-<h2>Teams</h2>
-<ul>
-    <li>
-        <a href="/Home/Index" id="link-Home">Home</a> 
-    </li>
 
-    @foreach (Team x in Model)
-    {
-        <li>
-            <a id="link-@x.TeamName" asp-controller="Home" asp-action="Index" asp-route-teamid ="@x.TeamId"
-               asp-route-teamname="@x.TeamName">@x.TeamName</a>  
-        </li>
-    }
 
-</ul>
+        <ul class="left-nav">
+            <li class="line-guy" id="link-Home">
+                <a href="/Home/Index">Home</a>
+            </li>
+
+            @foreach (Team x in Model)
+            {
+                <li id="link-@x.TeamName" class="line-guy">
+                    <a asp-controller="Home" asp-action="Index" asp-route-teamid="@x.TeamId"
+                       asp-route-teamname="@x.TeamName">@x.TeamName</a>
+                </li>
+            }
+
+        </ul>
