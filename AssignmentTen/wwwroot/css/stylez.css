@@ -29,6 +29,9 @@ body{
     padding:5px;
     border-radius:3px;
 }
+    .line-guy:hover {
+        background-color: rgba(171, 183, 183, 0.3);
+    }
 
 .left-nav {
     padding: 0;
